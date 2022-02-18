@@ -36,7 +36,7 @@ class TestUser(unittest.TestCase):
         check whether one can delete a user account
         '''
         self.new_user.save_user()
-        test_user = User("test", "trickysana")
+        test_user = User("try", "trickysana")
         test_user.save_user()
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list), 1)
@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
         find a user using username
         '''
         self.new_user.save_user()
-        test_user = User("test", "password")
+        test_user = User("try", "trickysana")
         test_user.save_user()
         found_user = User.find_user("EsauKip")
         self.assertEqual(found_user.username, self.new_user.username)
