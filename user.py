@@ -6,3 +6,6 @@ use_list=[]#list of users
 def __init__(self,username,password):
     self.username = username
     self.password =password
+    ##save users
+    def save_user(self):
+        User.use_list.append(self)
