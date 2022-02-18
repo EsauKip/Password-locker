@@ -8,5 +8,4 @@ def __init__(self,username,password):
     self.password =password
     ##save users
     def save_user(self):
-        User.use_list.append(self)
-
+        User.user_list.append(self)
