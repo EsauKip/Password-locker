@@ -19,6 +19,13 @@ class Credentials:
         delete credentials 
         '''
         Credentials.credentials_list.remove(self) 
+            # create credentials
+    def create_credentials(account, email, passlock):
+        '''
+        method credentials details
+        '''
+        new_credentials = Credentials(account, email, passlock)
+        return new_credentials
     @classmethod
     def find_account(cls, account):
         '''
