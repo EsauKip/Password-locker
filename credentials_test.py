@@ -1,6 +1,7 @@
 #!usr/bin/env python3.9
 import unittest#import unittest module
 from credentials import Credentials
+import pyperclip
 class TestCredentials(unittest.TestCase):
     def setUp(self):
         self.new_credentials = Credentials("Gmail", "kipronoesau28@gmail.com", "kiprono2022")
@@ -11,7 +12,7 @@ class TestCredentials(unittest.TestCase):
         '''
         self.assertEqual(self.new_credentials.account, "Gmail")
         self.assertEqual(self.new_credentials.email, "kipronoesau28@gmail.com")
-        self.assertEqual(self.new_credentials.password, "kiprono2022")
+        self.assertEqual(self.new_credentials.passcode, "kiprono2022")
         #7th test
     def test_save_credentials(self):
         '''
@@ -59,7 +60,7 @@ class TestCredentials(unittest.TestCase):
         confirm that credentials actually exists
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Twitter", "testuser","password")
+        test_credentials = Credentials("Twitter", "trythis","passcode")
         test_credentials.save_credentials()
         credentials_exists = Credentials.credentials_exists("Twitter")
         self.assertTrue(credentials_exists)
@@ -70,7 +71,8 @@ class TestCredentials(unittest.TestCase):
         test if all credentials can be displayed
         '''
         self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
-
+        ##copy
+      
 
 
 if __name__ == "__main__":
