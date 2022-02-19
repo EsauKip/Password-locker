@@ -12,5 +12,13 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_cred.account, "Gmail")
         self.assertEqual(self.new_cred.email, "kipronoesau28@gmail.com")
         self.assertEqual(self.new_cred.password, "kiprono2022")
+        #7th test
+    def test_save_credentials(self):
+        '''
+        check if credentials can be saved
+        '''  
+        self.new_cred.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
 if __name__ == "__main__":
     unittest.main()
