@@ -1,3 +1,4 @@
+
 class Credentials:
     '''generate instance of Credentials class
     '''
