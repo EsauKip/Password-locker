@@ -13,3 +13,9 @@ class Credentials:
         self credentials in credential_list
         '''
         Credentials.credentials_list.append(self)
+
+    def delete_credentials(self):
+        '''
+        delete credentials 
+        '''
+        Credentials.credentials_list.remove(self) 
