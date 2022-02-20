@@ -1,4 +1,5 @@
 #!/usr/bin/env python3.9
+from colorsys import rgb_to_yiq
 from credentials import Credentials
 from user import User
 import random
@@ -96,12 +97,12 @@ def main():
             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
             print("*" * 80)
         elif short_code == "ca":
-            print("Enter account details: ")
-            print("Account Name(e.g:linkedin): ")
-            account = input()
-            print("Email: ")
-            email = input()
-            print("Would you like a generated password?")
+                print("Enter account details: ")
+                print("Account Name(e.g:linkedin): ")
+                account = input()
+                print("Email: ")
+                email = input()
+                print("Would you like a generated password?")
         if input()=="yes":
                 characters= "mcnzbxvlkjhgfdsaqwertyuiop@#&$!()1234567890MCNZBXVLKJHGFDSAQWERTYUIOP"
                 how_many = len(characters)
@@ -124,15 +125,25 @@ def main():
                 print("*" * 80)
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
                 print("*" * 80)
-                  ###generating and save new password
+                    ###generating and save new password
                 save_user(create_credentials(account, email,password)) 
                 save_credentials(create_credentials(account, email,password))
                 print ('\n')
                 print(f"New User {account} {email} created")
                 print ('\n')
 
-        else:
+        
                 print("Cant find it please use shortcode 'ca' and start again")
+                    
+        elif short_code=="da":
+            print(f"These are your credentials for {name}:")
+            print("*" * 30)
+            for Credentials in display_credentials():
+                    print(f"{Credentials.account}\n {Credentials.email}\n {Credentials.password}")
+            else:
+                    print("*" * 30)
+                    print("If empty, you do not have any accounts saved")
+       
+       
 if __name__=='__main__':
-  main()
-    
+    main()
