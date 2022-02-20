@@ -94,7 +94,7 @@ def main():
             print(f"Logged in. Welcome {username}!")
             print("*" * 80)
          ##### utilize the credentials
-            print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+            print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account , ex -exit the contact list ")
             print("*" * 80)
         elif short_code == "ca":
                 print("Enter account details: ")
@@ -115,7 +115,7 @@ def main():
                 save_credentials(create_credentials(account, email, password))
                 print("saved! Enter 'da' to see account")
                 print("*" * 80)
-                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, ex -exit the contact list ")
                 print("*" * 80)
         elif input() == "no":
                 print("Password: ")
@@ -123,7 +123,7 @@ def main():
                 save_credentials(create_credentials(account, email, password))
                 print("Credentials saved! Enter 'da' to see account")
                 print("*" * 80)
-                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, ex -exit the contact list ")
                 print("*" * 80)
                     ###generating and save new password
                 save_user(create_credentials(account, email,password)) 
@@ -143,7 +143,21 @@ def main():
             else:
                     print("*" * 30)
                     print("If empty, you do not have any accounts saved")
-       
+        elif short_code == "fa":
+            print("Key in  the account you are searching for (ie.'instagram'): " )
+            search_credentials= input()
+            if find_account(search_credentials):
+                search_acc = find_account(search_credentials)
+                print(f"{search_acc.account} {search_acc.email} { search_acc.password}")
+            else: print("This account does not exist")
+        elif short_code == 'ex':
+            print("*"*30)
+            print("logging out...")
+            print('\n')
+            print('\n')
+            print("logged out")
+            print("*"*30)
+            break    
        
 if __name__=='__main__':
     main()
