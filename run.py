@@ -71,9 +71,9 @@ def main():
     name = input ()
     print(f"{name}, Sign up to start")
     print('\n')
-    print("#" * 80)
+    print("*" * 80)
     print("Reply with  : cc - Sign Up,  ex -exit ")
-    print("#" * 80)
+    print("*" * 80)
     while True:
         short_code = input().lower()
         if short_code == 'cc':
@@ -91,10 +91,10 @@ def main():
             print(f"Username: {username} , Password:{password}")
             print('\n')
             print(f"Logged in. Welcome {username}!")
-            print("#" * 80)
+            print("*" * 80)
          ##### utilize the credentials
             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
-            print("#" * 80)
+            print("*" * 80)
         elif short_code == "ca":
             print("Enter account details: ")
             print("Account Name(e.g:linkedin): ")
@@ -115,7 +115,7 @@ def main():
                 print("saved! Enter 'da' to see account")
                 print("*" * 80)
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
-                print("#" * 80)
+                print("*" * 80)
         elif input() == "no":
                 print("Password: ")
                 password=input()
