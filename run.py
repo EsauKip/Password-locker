@@ -9,3 +9,17 @@ def create_useraccount(username, password):
     '''
     new_user = User(username, password)
     return new_user
+### save the user account
+def save_user(user):
+    '''
+    method save user  account
+    '''
+    user.save_user()
+
+def save_credentials(credentials):
+
+    '''
+    method save credentials  account
+    '''
+
+    credentials.save_credentials
