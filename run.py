@@ -155,7 +155,7 @@ def main():
             print("logging out...")
             print('\n')
             print('\n')
-            print("logged out")
+            print("Byeee welcome back")
             print("*"*30)
             break    
        
