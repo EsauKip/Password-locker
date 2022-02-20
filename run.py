@@ -67,14 +67,72 @@ def delete_credentials(account):
 
 
 def main():
-    # Dealing user class first
-    print("Welcome to Password Locker! Please enter your name:  ")
+    print("Welcome to Password Locker! Please enter your name to begin:  ")
     name = input ()
-    print(f"{name}, Sign up to continue")
+    print(f"{name}, Sign up to start")
     print('\n')
-    print("*" * 80)
+    print("#" * 80)
     print("Reply with  : cc - Sign Up,  ex -exit ")
-    print("*" * 80)
+    print("#" * 80)
+    while True:
+        short_code = input().lower()
+        if short_code == 'cc':
+            print("Account creating process begins...")
+            print("Please enter the following information:")
+            print("Username: ")
+            username = input()
+
+            print("Password: ")
+            password = input()
+
+            save_user(create_useraccount(username, password))
+            print('\n')
+            print(f"{name}'s Account information: ")
+            print(f"Username: {username} , Password:{password}")
+            print('\n')
+            print(f"Logged in. Welcome {username}!")
+            print("#" * 80)
+         ##### utilize the credentials
+            print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+            print("#" * 80)
+        elif short_code == "ca":
+            print("Enter account details: ")
+            print("Account Name(e.g:linkedin): ")
+            account = input()
+            print("Email: ")
+            email = input()
+            print("Would you like a generated password?")
+        if input()=="yes":
+                characters= "mcnzbxvlkjhgfdsaqwertyuiop@#&$!()1234567890MCNZBXVLKJHGFDSAQWERTYUIOP"
+                how_many = len(characters)
+                print("How long would you like your password to be? ")
+                print(f"p.s: Maximum length of password is {how_many}")
+                lent = int(input())
+                password = "".join(random.sample(characters, lent))
+                print(f"Your password has {lent} characters ")
+                print(password)
+                save_credentials(create_credentials(account, email, password))
+                print("saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("#" * 80)
+        elif input() == "no":
+                print("Password: ")
+                password=input()
+                save_credentials(create_credentials(account, email, password))
+                print("Credentials saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("*" * 80)
+                  ###generating and save new password
+                save_user(create_credentials(account, email,password)) 
+                save_credentials(create_credentials(account, email,password))
+                print ('\n')
+                print(f"New User {account} {email} created")
+                print ('\n')
+
+        else:
+                print("Cant find it please use shortcode 'ca' and start again")
 if __name__=='__main__':
   main()
     

@@ -4,10 +4,10 @@ class Credentials:
     '''
     credentials_list = []
     # assign property to credential list
-    def __init__(self,account,email,passcode):
+    def __init__(self,account,email,password):
         self.account = account
         self.email = email
-        self.passcode = passcode
+        self.password = password
     def save_credentials(self):
         '''
         self credentials in credential_list
@@ -20,11 +20,11 @@ class Credentials:
         '''
         Credentials.credentials_list.remove(self) 
             # create credentials
-    def create_credentials(account, email, passcode):
+    def create_credentials(account, email, password):
         '''
         method credentials details
         '''
-        new_credentials = Credentials(account, email, passcode)
+        new_credentials = Credentials(account, email, password)
         return new_credentials
     @classmethod
     def find_account(cls, account):

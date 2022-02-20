@@ -12,7 +12,7 @@ class TestCredentials(unittest.TestCase):
         '''
         self.assertEqual(self.new_credentials.account, "Gmail")
         self.assertEqual(self.new_credentials.email, "kipronoesau28@gmail.com")
-        self.assertEqual(self.new_credentials.passcode, "kiprono2022")
+        self.assertEqual(self.new_credentials.password, "kiprono2022")
         #7th test
     def test_save_credentials(self):
         '''
@@ -26,7 +26,7 @@ class TestCredentials(unittest.TestCase):
         check if users can store multiple credentials
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Twitter", "trythis","passcode")
+        test_credentials = Credentials("Twitter", "trythis","password")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
     def tearDown(self):
@@ -40,7 +40,7 @@ class TestCredentials(unittest.TestCase):
         test if you can delete credentials test
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Twitter", "trythis","passcode")
+        test_credentials = Credentials("Twitter", "trythis","password")
         test_credentials.save_credentials()
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
@@ -50,7 +50,7 @@ class TestCredentials(unittest.TestCase):
         test if credentials can be searched for
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Twitter", "trythis","passcode")
+        test_credentials = Credentials("Twitter", "trythis","password")
         test_credentials.save_credentials()
         find_credentials= Credentials.find_account("Twitter")
         self.assertEqual(find_credentials.account, test_credentials.account)
@@ -60,7 +60,7 @@ class TestCredentials(unittest.TestCase):
         confirm that credentials actually exists
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Twitter", "trythis","passcode")
+        test_credentials = Credentials("Twitter", "trythis","password")
         test_credentials.save_credentials()
         credentials_exists = Credentials.credentials_exists("Twitter")
         self.assertTrue(credentials_exists)
@@ -71,7 +71,7 @@ class TestCredentials(unittest.TestCase):
         test if all credentials can be displayed
         '''
         self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
-        ##copy
+        
       
 
 
