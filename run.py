@@ -134,7 +134,7 @@ def main():
 
         
                 print("Cant find it please use shortcode 'ca' and start again")
-                    
+                    ###Display account
         elif short_code=="da":
             print(f"These are your credentials for {name}:")
             print("*" * 30)
@@ -143,6 +143,7 @@ def main():
             else:
                     print("*" * 30)
                     print("If empty, you do not have any accounts saved")
+                    ##find account
         elif short_code == "fa":
             print("Key in  the account you are searching for (ie.'instagram'): " )
             search_credentials= input()
