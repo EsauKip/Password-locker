@@ -1,4 +1,4 @@
-import pyperclip
+# import pyperclip
 class Credentials:
     '''generate instance of Credentials class
     '''
